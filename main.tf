@@ -69,8 +69,7 @@ module "td" {
 # ECS Service
 #------------------------------------------------------------------------------
 module "ecs-fargate-service" {
-  source  = "cn-terraform/ecs-fargate-service/aws"
-  version = "2.0.14"
+  source  = "git@github.com:mo-hit/terraform-aws-ecs-fargate-service.git"
   # source  = "../terraform-aws-ecs-fargate-service"
 
   name_prefix = var.name_prefix
@@ -101,7 +100,7 @@ module "ecs-fargate-service" {
   # ECS Autoscaling
   enable_autoscaling = var.enable_autoscaling
   ecs_cluster_name   = module.ecs-cluster.aws_ecs_cluster_cluster_name
-  
+
   # Certificates
   default_certificate_arn                         = var.default_certificate_arn
   ssl_policy                                      = var.ssl_policy
