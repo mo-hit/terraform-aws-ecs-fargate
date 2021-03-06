@@ -101,38 +101,7 @@ module "ecs-fargate-service" {
   # ECS Autoscaling
   enable_autoscaling = var.enable_autoscaling
   ecs_cluster_name   = module.ecs-cluster.aws_ecs_cluster_cluster_name
-
-  # Application Load Balancer
-  lb_internal                         = var.lb_internal
-  lb_security_groups                  = var.lb_security_groups
-  lb_drop_invalid_header_fields       = var.lb_drop_invalid_header_fields
-  lb_idle_timeout                     = var.lb_idle_timeout
-  lb_enable_deletion_protection       = var.lb_enable_deletion_protection
-  lb_enable_cross_zone_load_balancing = var.lb_enable_cross_zone_load_balancing
-  lb_enable_http2                     = var.lb_enable_http2
-  lb_ip_address_type                  = var.lb_ip_address_type
-
-  # Access Control to Application Load Balancer
-  lb_http_ports                    = var.lb_http_ports
-  lb_http_ingress_cidr_blocks      = var.lb_http_ingress_cidr_blocks
-  lb_http_ingress_prefix_list_ids  = var.lb_http_ingress_prefix_list_ids
-  lb_https_ports                   = var.lb_https_ports
-  lb_https_ingress_cidr_blocks     = var.lb_https_ingress_cidr_blocks
-  lb_https_ingress_prefix_list_ids = var.lb_https_ingress_prefix_list_ids
-
-  # Target Groups
-  lb_deregistration_delay                          = var.lb_deregistration_delay
-  lb_slow_start                                    = var.lb_slow_start
-  lb_load_balancing_algorithm_type                 = var.lb_load_balancing_algorithm_type
-  lb_stickiness                                    = var.lb_stickiness
-  lb_target_group_health_check_enabled             = var.lb_target_group_health_check_enabled
-  lb_target_group_health_check_interval            = var.lb_target_group_health_check_interval
-  lb_target_group_health_check_path                = var.lb_target_group_health_check_path
-  lb_target_group_health_check_timeout             = var.lb_target_group_health_check_timeout
-  lb_target_group_health_check_healthy_threshold   = var.lb_target_group_health_check_healthy_threshold
-  lb_target_group_health_check_unhealthy_threshold = var.lb_target_group_health_check_unhealthy_threshold
-  lb_target_group_health_check_matcher             = var.lb_target_group_health_check_matcher
-
+  
   # Certificates
   default_certificate_arn                         = var.default_certificate_arn
   ssl_policy                                      = var.ssl_policy
